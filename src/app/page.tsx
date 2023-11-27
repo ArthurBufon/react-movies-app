@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <div>
-      <h2>Movies App</h2>
+      <h2>Home</h2>
     </div>
   )
 }
