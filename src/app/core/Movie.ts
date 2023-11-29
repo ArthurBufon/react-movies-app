@@ -1,23 +1,22 @@
+import { formatDateToInput } from "../utils/converters";
+
 export default class Movie {
-    id: number | null;
+    movie_id: number | null;
     title: string;
     genre: string;
-    rating: number;
+    rating: number | null;
     releaseDate: string;
-    movie_id: number;
     constructor(
-        id: number | null,
+        movie_id: number | null,
         title: string,
         genre: string,
-        rating: number,
-        releaseDate: string,
-        movie_id: number) {
-        this.id = id;
+        rating: number | null,
+        releaseDate: string) {
+        this.movie_id = movie_id;
         this.title = title;
         this.genre = genre;
         this.rating = rating;
         this.releaseDate = releaseDate;
-        this.movie_id = movie_id;
     }
 
     static generateMoviesMock() {
@@ -27,25 +26,26 @@ export default class Movie {
                 "Cool movie",
                 "Adventure",
                 8.1,
-                "2023-10-31T03:00:00.000+00:00",
-                9,
+                "2015-01-02",
             ),
             new Movie(
                 2,
                 "Another Cool movie",
                 "Comedy",
                 9.3,
-                "2023-10-31T03:00:00.000+00:00",
-                12,
+                "2020-12-25",
             ),
             new Movie(
                 3,
                 "Bad Movie",
                 "Comedy",
                 6.2,
-                "2023-10-31T03:00:00.000+00:00",
-                5,
+                "2023-10-07",
             )
         ]
+    }
+
+    static empty(): Movie {
+        return new Movie(null, "", formatDateToInput(""), null, "");
     }
 }

@@ -27,8 +27,8 @@ export default function Table(props: TabelaProps) {
   function renderBody() {
     return props.movies?.map((movie, i) => {
       return (
-        <tr key={movie.id} className={`${i % 2 === 0 ? "bg-gray-100" : ""} `}>
-          <td className="text-left p-3">{movie.id}</td>
+        <tr key={movie.movie_id} className={`${i % 2 === 0 ? "bg-gray-100" : ""} `}>
+          <td className="text-left p-3">{movie.movie_id}</td>
           <td className="text-left p-3">{movie.title}</td>
           <td className="text-left p-3">{movie.genre}</td>
           <td className="text-left p-3">{movie.rating}</td>
