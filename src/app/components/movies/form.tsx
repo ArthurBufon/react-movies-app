@@ -9,6 +9,7 @@ interface FormProps {
     movieChanged?: (movie: Movie) => void
     canceled?: () => void
 }
+
 export default function Form(props: FormProps) {
     const id = props.movie?.movie_id;
     const [title, setTitle] = useState(props.movie?.title);
@@ -19,7 +20,7 @@ export default function Form(props: FormProps) {
     return (
         <div>
             {/* Id */}
-            {id ? (<Input texto="id" valor={id} readOnly />) : false}
+            {id ? (<Input texto="id" valor={(id)} readOnly />) : false}
 
             {/* Title */}
             <Input texto="Title" valor={title} onChange={setTitle} />

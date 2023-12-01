@@ -46,6 +46,12 @@ export default class Movie {
     }
 
     static empty(): Movie {
-        return new Movie(null, "", formatDateToInput(""), null, "");
+        return new Movie(
+            null,
+            "",
+            "",
+            null,
+            formatDateToInput("2015-01-02")
+        );
     }
 }
